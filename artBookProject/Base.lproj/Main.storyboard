@@ -48,9 +48,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-c8-evZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-c8-evZ">
                                 <rect key="frame" x="76" y="138" width="241" height="311"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="241" id="2Dq-Wt-juZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="311" id="B9x-5v-EAn"/>
                                     <constraint firstAttribute="height" constant="311" id="g8P-Qw-NMJ"/>
                                     <constraint firstAttribute="width" constant="241" id="ozc-ia-WIS"/>
                                 </constraints>
@@ -149,6 +151,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="select" width="200" height="200"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
