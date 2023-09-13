@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationBarDelegate, UINavigationControllerDelegate{
 
@@ -48,7 +49,28 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     @IBAction func saveButtonTik(_ sender: UIButton) {
-        print("tıklandı")
+        
+        let appDelgate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelgate.persistentContainer.viewContext
+        
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        
+        //Atributes
+        newPainting.setValue(nameText.text!, forKey: "name")
+        newPainting.setValue(artistText.text!, forKey: "artist")
+        if let year = Int(yearText.text!) {
+            newPainting.setValue(year, forKey: "year")
+        }
+        newPainting.setValue(UUID(), forKey: "id")
+        let data  = imageView.image!.jpegData(compressionQuality: 0.5)
+        newPainting.setValue(data, forKey: "image")
+        
+        do {
+            try context.save()
+            print("succes")
+        } catch {
+            print("error")
+    }
     }
     
     
