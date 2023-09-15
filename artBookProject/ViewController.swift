@@ -39,7 +39,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             let results = try context.fetch(fetchRequest)
-            
+            if results.count > 0 {
+                
+            }
             for result in results as! [NSManagedObject] {
                 if let name = result.value(forKey: "name") as? String {
                     self.nameArray.append(name)
