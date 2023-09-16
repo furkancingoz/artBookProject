@@ -124,6 +124,7 @@
                         <outlet property="artistText" destination="z8m-eP-KVv" id="I0r-8Z-sTg"/>
                         <outlet property="imageView" destination="Zgc-c8-evZ" id="Laq-pG-Wis"/>
                         <outlet property="nameText" destination="c9X-jI-F1F" id="BX8-cL-mh0"/>
+                        <outlet property="saveButon" destination="XqH-ls-A06" id="LNc-d5-Eli"/>
                         <outlet property="yearText" destination="X3A-qh-Rke" id="Xgh-Ma-nSF"/>
                     </connections>
                 </viewController>

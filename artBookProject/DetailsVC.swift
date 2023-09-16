@@ -18,6 +18,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBOutlet weak var nameText: UITextField!
     
+    @IBOutlet weak var saveButon: UIButton!
     var chosenPainting = ""
     var chosenPaintingId : UUID?
     
@@ -25,6 +26,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     override func viewDidLoad() {
         super.viewDidLoad()
         if chosenPainting != "" {
+            saveButon.isHidden = true
            // let stringUUID = chosenPaintingId?.uuidString
            // print(stringUUID)
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -66,6 +68,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             
             
         } else {
+            saveButon.isEnabled = false
             print("boşluk")
         }
         
@@ -89,6 +92,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.editedImage] as? UIImage
+        saveButon.isEnabled = true
         self.dismiss(animated: true)
     }
     
